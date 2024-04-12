@@ -4,12 +4,13 @@ html, body{
 }
 
 #wrapper{
-    margin: 0 auto;
-    max-width: 100%;
-
     background: #fff;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
 }
 
 header {
