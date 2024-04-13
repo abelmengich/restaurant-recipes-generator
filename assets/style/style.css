@@ -4,6 +4,7 @@ html, body{
 }
 
 #wrapper{
+    margin: 0 auto;
     background: #fff;
     display: flex;
     flex-direction: column;
@@ -12,6 +13,19 @@ html, body{
     text-align: center;
     min-height: 100vh;
 }
+
+a:link { 
+    text-decoration: none; 
+  } 
+  a:visited { 
+    text-decoration: none; 
+  } 
+  a:hover { 
+    text-decoration: none; 
+  } 
+  a:active { 
+    text-decoration: none; 
+  }
 
 header {
     margin-top: 50px;
@@ -59,6 +73,8 @@ header {
             height: 300px;
             width: 100%;
         }
+
+
     }
 }
 
