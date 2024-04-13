@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
 
 const API_BASE = "https://api.spoonacular.com/recipes"; 
-const API_KEY = "f01c2ae708b445da83e044d46ad551c7";
+const API_KEY = "758b594da0dd4399b8869408f5674ae2";
 
 
 let ingredients ;
@@ -19,7 +19,16 @@ async function findByIngdredients(){
     listRecipes.map(
         function(element){
             
-            document.getElementById("recipes-container").innerHTML += `<div class="recipe-card"><a href="#"><h2>"${element.title}"</h2><img src="${element.image}"/></a></div>`;
+            // document.getElementById("recipes-container").innerHTML += `<div class="recipe-card "><a href="#"><h2>"${element.title}"</h2><img src="${element.image}"/></a></div><br/><button >More details</button>`;
+           
+           
+            document.getElementById("recipes-container").innerHTML += `<div
+            style="margin: 15px; height: 100%;  width: 260px;  overflow: hidden; display: flex; flex-direction: column;  justify-content: space-between">
+                <img style="object-fit : cover; width: 100%; border: 1px #cecece solid; border-radius: 10px;"
+                    src=${element.image}"/>
+
+                <button class="button-details ">Recipe details</button>
+            </div>`;
             console.log(element);
         }
     );
