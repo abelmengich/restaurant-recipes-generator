@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
 
 const API_BASE = "https://api.spoonacular.com/recipes"; 
-const API_KEY = "758b594da0dd4399b8869408f5674ae2";
+const API_KEY = "c463d5183a064d5795b3d3defa38193a";
 var  counter = 0;
 
 let ingredients ;
@@ -31,48 +31,6 @@ async function findByIngdredients(){
 
 
 /*  Modal Recipes Details */
- /* Opening modal window function */
- function openModal() {
-  /* Get trigger element */
-  var modalTrigger = document.getElementsByClassName('jsModalTrigger');
-
-  /* Set onclick event handler for all trigger elements */
-  for(var i = 0; i < modalTrigger.length; i++) {
-      modalTrigger[i].onclick = function() {
-        var target = this.getAttribute('href').substr(1);
-        var modalWindow = document.getElementById(target);
-
-        modalWindow.classList ? modalWindow.classList.add('open') : modalWindow.className += ' ' + 'open'; 
-      }
-  }   
-}
-
-function closeModal(){
-/* Get close button */
-var closeButton = document.getElementsByClassName('jsModalClose');
-var closeOverlay = document.getElementsByClassName('jsOverlay');
-
-/* Set onclick event handler for close buttons */
-  for(var i = 0; i < closeButton.length; i++) {
-    closeButton[i].onclick = function() {
-      var modalWindow = this.parentNode.parentNode;
-
-      modalWindow.classList ? modalWindow.classList.remove('open') : modalWindow.className = modalWindow.className.replace(new RegExp('(^|\\b)' + 'open'.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
-    }
-  }   
-
-/* Set onclick event handler for modal overlay */
-  for(var i = 0; i < closeOverlay.length; i++) {
-    closeOverlay[i].onclick = function() {
-      var modalWindow = this.parentNode;
-
-      modalWindow.classList ? modalWindow.classList.remove('open') : modalWindow.className = modalWindow.className.replace(new RegExp('(^|\\b)' + 'open'.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
-    }
-  }  
-
-}
-
-
 const wrapper = document.getElementById('wrapper');
 
 wrapper.addEventListener('click', (event) => {
