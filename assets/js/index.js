@@ -30,6 +30,45 @@ async function findByIngdredients(){
 }
 
 
+/* Multiple Search Form */
+
+
+function handleSearchInputKeyDown(e) {
+  if (e.key === 'Enter') {
+    e.preventDefault();
+
+    let ingredientsList = this.value;
+    let ingredientsReadyToSearch = "";
+
+    ingredientsList.split(" ").forEach(ingredient => {
+      ingredientsReadyToSearch += ingredient + ",+";
+    });
+
+    this.value = " ";
+
+    function ingredientsUrlFixer(value){
+      let ingredientListFixed = value;
+      console.log(ingredientsReadyToSearch);
+    }
+    
+
+    
+  }
+}
+
+document.getElementById('search-input').onkeydown = handleSearchInputKeyDown;
+
+
+function ingredientsUrlFixer(value){
+  let ingredientListFixed = value;
+  console.log(ingredientListFixed);
+}
+
+
+
+
+
+
 /*  Modal Recipes Details */
 const wrapper = document.getElementById('wrapper');
 
