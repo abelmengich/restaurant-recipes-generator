@@ -4,13 +4,13 @@ const API_BASE = "https://api.spoonacular.com/recipes";
 const API_KEY = "c463d5183a064d5795b3d3defa38193a";
 var  counter = 0;
 
-let ingredients ;
 
 /* Function to fetch Recipes By ingredients */
  /* Starting with default given value */
 async function findByIngdredients(){
     
     let ingredients = "apples,+flour,+sugar";
+
 
     const response = await fetch(`${API_BASE}/findByIngredients?ingredients=${ingredients}&number=9&apiKey=${API_KEY}`);
     listRecipes = await response.json();
@@ -34,39 +34,27 @@ async function findByIngdredients(){
 
 
 function handleSearchInputKeyDown(e) {
+  let anotherBanger = " ";
+
+
+  localStorage.removeItem('banga');
+
   if (e.key === 'Enter') {
     e.preventDefault();
-
     let ingredientsList = this.value;
-    let ingredientsReadyToSearch = "";
-
     ingredientsList.split(" ").forEach(ingredient => {
-      ingredientsReadyToSearch += ingredient + ",+";
+      anotherBanger += ingredient + ",+";
     });
-
     this.value = " ";
-
-    function ingredientsUrlFixer(value){
-      let ingredientListFixed = value;
-      console.log(ingredientsReadyToSearch);
-    }
-    
-
-    
+     // Storing for a short time the currrent serach in a windowd local storage
+    localStorage.setItem("banga", JSON.stringify(anotherBanger));
   }
+
+ 
 }
+
 
 document.getElementById('search-input').onkeydown = handleSearchInputKeyDown;
-
-
-function ingredientsUrlFixer(value){
-  let ingredientListFixed = value;
-  console.log(ingredientListFixed);
-}
-
-
-
-
 
 
 /*  Modal Recipes Details */
