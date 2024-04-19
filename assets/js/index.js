@@ -27,6 +27,9 @@ async function findByIngdredients(){
             
         }
     );
+
+    //console.log(JSON.parse(localStorage.getItem("banga")));
+
 }
 
 
@@ -38,13 +41,18 @@ function handleSearchInputKeyDown(e) {
 
 
   localStorage.removeItem('banga');
+  findByIngdredients(localStorage)
 
   if (e.key === 'Enter') {
     e.preventDefault();
     let ingredientsList = this.value;
-    ingredientsList.split(" ").forEach(ingredient => {
+    /*ingredientsList.split(" ").forEach(ingredient => {
+
       anotherBanger += ingredient + ",+";
-    });
+      
+    }); */
+    anotherBanger = ingredientsList.split(" ").join(",+");
+
     this.value = " ";
      // Storing for a short time the currrent serach in a windowd local storage
     localStorage.setItem("banga", JSON.stringify(anotherBanger));
